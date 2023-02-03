@@ -16,17 +16,19 @@ class ProductForm(StyleFormMixin, forms.ModelForm):
         for name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
 
-    def clean_modification(self):
+    def clean_description(self):
         forbidden_words = [
             'казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция', 'радар'
         ]
-        modification = self.cleaned_data['modification']
+        description = self.cleaned_data['description']
 
         for word in forbidden_words:
-            if word in modification:
-                raise forms.ValidationError(f'Слово {word} запрещено на сайте')
+            print(word)
+            print(description)
+            if word in description:
+                raise forms.ValidationError(f'Слово {word} ай-ай-ай на сайте')
 
-        return modification
+        return description
 
 class VersionForm(StyleFormMixin, forms.ModelForm):
     class Meta:
