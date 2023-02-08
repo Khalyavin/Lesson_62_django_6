@@ -39,17 +39,17 @@
                                             {% if forloop.first %}
                                                 {% for hidden in form.hidden_fields %}
                                                     {{ hidden }}
-                                                {% endfor %}}
-                                            {% endif %}}
+                                                {% endfor %}
+                                            {% endif %}
                                             {{ field.errors_as_ul }}
                                             {% if not forloop.last %}
                                                 {{ field.label }}
-                                            {% endif %}}
+                                            {% endif %}
                                             {{ field }}
                                         </div>
                                     {% endfor %}
                                 </div>
-                            {% endfor %}}
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -57,11 +57,13 @@
         </div>
     </form>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.formset/1.2.2/jquery.formset.min.js"
+        integrity="sha512-ltwjKsDTo3hW/wV66ZaEkf2wOAFxmg7rWM76J8kOcYKLSKy44WBYO/BFaNNH3NGDS8BSz3meB9wtSnm41oL+pA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"#}
+{#            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="#}
+{#            crossorigin="anonymous"></script>#}
     <script>
-        $('.formset_row').formset({
+        $('.formset-row').formset({
             addText: "<span class=\"btn btn-outline-primary\">Добавить версию</span>",
             deleteText: '<span class="btn btn-outline-danger">Удалить</span>',
             prefix: 'tag-set',
